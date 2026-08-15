@@ -42,7 +42,7 @@
       display: grid;
       grid-template-columns: minmax(240px, 0.86fr) minmax(280px, 1fr);
       gap: 40px;
-      align-items: center;
+      align-items: stretch;
       margin-bottom: 28px;
     }
 
@@ -74,7 +74,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     a.btn {
@@ -93,15 +93,19 @@
     }
 
     .shot {
+      position: relative;
+      min-height: 220px;
       background: var(--card);
       border: 1px solid var(--line);
-      padding: 10px;
     }
 
     .shot img {
-      display: block;
-      width: 100%;
+      position: absolute;
+      inset: 10px;
+      width: auto;
       height: auto;
+      object-fit: cover;
+      object-position: top center;
     }
 
     h2 {
@@ -121,7 +125,7 @@
     }
 
     .features {
-      margin-bottom: 28px;
+      margin: 0;
     }
 
     .feature-grid {
@@ -157,6 +161,18 @@
         grid-template-columns: 1fr;
         gap: 24px;
       }
+
+      .shot {
+        position: static;
+        min-height: 0;
+        padding: 10px;
+      }
+
+      .shot img {
+        position: static;
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -175,29 +191,29 @@
         <div class="actions">
           <a class="btn" href="https://drive.google.com/file/d/1yX0l4OQONL30i5AlRXuckC8BglNBIIA4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download</a>
         </div>
+        <section class="features" aria-labelledby="feature-list">
+          <h2 id="feature-list">Feature List</h2>
+          <div class="feature-grid">
+            <div>
+              <h3>NVIDIA</h3>
+              <ul>
+                <li>Autodetects NVIDIA graphics hardware.</li>
+                <li>Downloads official Game Ready or Studio drivers.</li>
+                <li>Provides a clean installation option (excludes the NVIDIA App).</li>
+                <li>Installs supplementary NVIDIA HD Audio and USB-C drivers where applicable.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>AMD</h3>
+              <ul>
+                <li>Autodetects AMD graphics hardware.</li>
+                <li>Downloads official AMD display drivers directly from the vendor.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-    <section class="features" aria-labelledby="feature-list">
-      <h2 id="feature-list">Feature List</h2>
-      <div class="feature-grid">
-        <div>
-          <h3>NVIDIA</h3>
-          <ul>
-            <li>Autodetects NVIDIA graphics hardware.</li>
-            <li>Downloads official Game Ready or Studio drivers.</li>
-            <li>Provides a clean installation option (excludes the NVIDIA App).</li>
-            <li>Installs supplementary NVIDIA HD Audio and USB-C drivers where applicable.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>AMD</h3>
-          <ul>
-            <li>Autodetects AMD graphics hardware.</li>
-            <li>Downloads official AMD display drivers directly from the vendor.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
     <footer>Windows 10 and 11. No installer required.</footer>
   </main>
 </body>
