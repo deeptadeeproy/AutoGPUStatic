@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoGraphicsFind</title>
+  <meta name="description" content="Detect NVIDIA or AMD GPUs and install the matching official driver. Portable Windows app.">
+  <link rel="icon" href="assets/favicon.ico">
+  <style>
+    :root {
+      --bg: #202020;
+      --card: #2a2a2a;
+      --text: #e0e0e0;
+      --muted: #a8a8a8;
+      --line: #646464;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: safe center;
+      justify-content: safe center;
+    }
+
+    main {
+      width: min(1040px, 100%);
+      padding: 32px 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.86fr) minmax(280px, 1fr);
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    header img {
+      width: 48px;
+      height: 48px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .tag {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    a.btn {
+      display: inline-block;
+      padding: 9px 18px;
+      border: 1px solid #c99212;
+      background: #c99212;
+      color: #1a1408;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a.btn:hover {
+      background: #dba51a;
+      border-color: #dba51a;
+    }
+
+    .shot {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 10px;
+    }
+
+    .shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .features {
+      margin-bottom: 28px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 40px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li { margin: 4px 0; }
+
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    @media (max-width: 800px) {
+      .hero,
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="hero">
+      <div class="shot">
+        <img src="assets/screenshot.png" alt="AutoGraphicsFind detecting an NVIDIA GPU and downloading the driver">
+      </div>
+      <div>
+        <header>
+          <img src="assets/logo.png" alt="">
+          <h1>AutoGraphicsFind</h1>
+        </header>
+        <p class="tag">A portable Windows utility that detects NVIDIA or AMD graphics hardware and installs the matching official driver.</p>
+        <div class="actions">
+          <a class="btn" href="https://drive.google.com/file/d/1yX0l4OQONL30i5AlRXuckC8BglNBIIA4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
+      </div>
+    </div>
+    <section class="features" aria-labelledby="feature-list">
+      <h2 id="feature-list">Feature List</h2>
+      <div class="feature-grid">
+        <div>
+          <h3>NVIDIA</h3>
+          <ul>
+            <li>Autodetects NVIDIA graphics hardware.</li>
+            <li>Downloads official Game Ready or Studio drivers.</li>
+            <li>Provides a clean installation option (excludes the NVIDIA App).</li>
+            <li>Installs supplementary NVIDIA HD Audio and USB-C drivers where applicable.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>AMD</h3>
+          <ul>
+            <li>Autodetects AMD graphics hardware.</li>
+            <li>Downloads official AMD display drivers directly from the vendor.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>Windows 10 and 11. No installer required.</footer>
+  </main>
+</body>
+</html>
