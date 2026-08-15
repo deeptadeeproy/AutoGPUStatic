@@ -46,6 +46,10 @@
       margin-bottom: 28px;
     }
 
+    .copy {
+      min-width: 0;
+    }
+
     header {
       display: flex;
       align-items: center;
@@ -94,18 +98,20 @@
 
     .shot {
       position: relative;
-      min-height: 220px;
+      min-width: 0;
+      min-height: 0;
       background: var(--card);
       border: 1px solid var(--line);
     }
 
     .shot img {
       position: absolute;
-      inset: 10px;
-      width: auto;
-      height: auto;
-      object-fit: cover;
-      object-position: top center;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      object-fit: contain;
+      object-position: center;
     }
 
     h2 {
@@ -130,8 +136,8 @@
 
     .feature-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px 40px;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     h3 {
@@ -156,15 +162,13 @@
     }
 
     @media (max-width: 800px) {
-      .hero,
-      .feature-grid {
+      .hero {
         grid-template-columns: 1fr;
         gap: 24px;
       }
 
       .shot {
         position: static;
-        min-height: 0;
         padding: 10px;
       }
 
@@ -182,7 +186,7 @@
       <div class="shot">
         <img src="assets/screenshot.png" alt="AutoGraphicsFind detecting an NVIDIA GPU and downloading the driver">
       </div>
-      <div>
+      <div class="copy">
         <header>
           <img src="assets/logo.png" alt="">
           <h1>AutoGraphicsFind</h1>
